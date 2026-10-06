@@ -46,12 +46,10 @@
 
   .alt { background: var(--mint); }
   .grid { display: grid; grid-template-columns: 1fr; gap: 28px; margin-top: 28px; }
-  #people .grid { grid-template-columns: repeat(2, minmax(220px, 1fr)); }
-  #people .person:nth-child(1),
-  #people .person:nth-child(2),
-  #people .person:nth-child(3),
-  #people .person:nth-child(4) { align-self: start; }
-  #people .person:nth-child(5) { grid-column: 1 / -1; }
+  #people .grid { display: block; }
+  #people .person-row { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 0; }
+  #people .person-row + .person-row { margin-top: 28px; }
+  #people .person { flex: 1 1 calc(50% - 14px); max-width: calc(50% - 14px); }
   .person .photo { aspect-ratio: 1; width: 120px; margin-bottom: 12px; border-radius: 50%; overflow: hidden; background: var(--green); display: grid; place-items: center; }
   .person .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .person h3 { font-size: 1.15rem; margin-bottom: .1em; }
@@ -109,13 +107,13 @@
         </div>
         <div>
           <h3> Human-AI Interaction and Its Effects on Semantic Categorization </h3>
-          <p>Engagement with Artificial Intelligence (AI) has increased dramatically in recent years. AI conversational agents or chatbots, in their attempt to mimic human speech, are trained to have [...]
+          <p>Engagement with Artificial Intelligence (AI) has increased dramatically in recent years. AI conversational agents or chatbots, in their attempt to mimic human speech, are trained to have [...]</p>
 
-          <p>In the research reported here, participants engaged in three days of structured voice-based interaction with ChatGPT-5 designed to convey positive emotional valence while learning two sci[...]
+          <p>In the research reported here, participants engaged in three days of structured voice-based interaction with ChatGPT-5 designed to convey positive emotional valence while learning two sci[...].</p>
 
-          <p>The priming manipulation was intended to test whether the AI's positive valence had been internalized: if so, participants should perform better when the emotional tone of the test enviro[...]
+          <p>The priming manipulation was intended to test whether the AI's positive valence had been internalized: if so, participants should perform better when the emotional tone of the test enviro[...].</p>
 
-          <p>These findings provide preliminary evidence that emotional valence conveyed by AI during learning may shape subsequent cognitive processing, with retrieval showing sensitivity to the matc[...]
+          <p>These findings provide preliminary evidence that emotional valence conveyed by AI during learning may shape subsequent cognitive processing, with retrieval showing sensitivity to the matc[...].</p>
         </div>
       </div>
     </div>
@@ -125,7 +123,7 @@
     <div class="wrap">
       <h2>Conference Presentations</h2>
       <ul class="pubs">
-        <li>Gupta, E., Dunagan, K., &amp; Abrams, R.L. <a href="WPA2026GuptaDunaganAbrams.pdf">Human-AI Interaction and the Internalization of Positive Valence in Semantic Categorization</a>.<br>Poster presented at the May 2026 annual convention of the Western Psychological Association, Tacoma, WA.
+        <li>Gupta, E., Dunagan, K., &amp; Abrams, R.L. <a href="WPA2026GuptaDunaganAbrams.pdf">Human-AI Interaction and the Internalization of Positive Valence in Semantic Categorization</a>.<br>Poste[...]
       </ul>
     </div>
   </section>
@@ -134,11 +132,18 @@
     <div class="wrap">
       <h2>People</h2>
       <div class="grid">
-        <div class="person"><div class="photo" aria-hidden="true"><img src="EG Photo.jpg" alt="Emily Gupta"></div><h3> Emily Gupta </h3><p>Emily is a junior at Loyola Marymount University double-majoring in Psychology and Studio Arts. She joined the C&C group in January 2025, and she has particularly enjoyed designing experimental stimuli, running study sessions, and translating findings into research writing. Looking ahead, she plans to pursue a Ph.D. to continue exploring these questions through advanced research. Outside the lab, Emily stays active through interning at PCH Treatment Center, philanthropy with her sorority, and creating art for family and friends.
-        <div class="person"><div class="photo" aria-hidden="true">RA</div><h3> Richard Abrams </h3><p>[Role]</p></div>
-        <div class="person"><div class="photo" aria-hidden="true">KD</div><h3> Katelin Dunagan </h3><p>[Role]</p></div>
-        <div class="person"><div class="photo" aria-hidden="true">MC</div><h3> Mira Chaffin </h3><p>[Role]</p></div>
-        <div class="person"><div class="photo" aria-hidden="true">CB</div><h3> Callie Bream </h3><p>[Role]</p></div>
+        <div class="person-row">
+          <div class="person"><div class="photo" aria-hidden="true"><img src="EG Photo.jpg" alt="Emily Gupta"></div><h3> Emily Gupta </h3><p>Emily is a junior at Loyola Marymount University double-ma[...]
+          </div>
+          <div class="person"><div class="photo" aria-hidden="true">RA</div><h3> Richard Abrams </h3><p>[Role]</p></div>
+        </div>
+        <div class="person-row">
+          <div class="person"><div class="photo" aria-hidden="true">KD</div><h3> Katelin Dunagan </h3><p>[Role]</p></div>
+          <div class="person"><div class="photo" aria-hidden="true">MC</div><h3> Mira Chaffin </h3><p>[Role]</p></div>
+        </div>
+        <div class="person-row">
+          <div class="person"><div class="photo" aria-hidden="true">CB</div><h3> Callie Bream </h3><p>[Role]</p></div>
+        </div>
       </div>
     </div>
   </section>
