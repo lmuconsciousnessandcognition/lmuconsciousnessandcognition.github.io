@@ -47,7 +47,11 @@
   .alt { background: var(--mint); }
   .grid { display: grid; grid-template-columns: 1fr; gap: 28px; margin-top: 28px; }
   #people .grid { grid-template-columns: repeat(2, minmax(220px, 1fr)); }
-  #people .person:last-child { grid-column: 1 / -1; }
+  #people .person:nth-child(1),
+  #people .person:nth-child(2),
+  #people .person:nth-child(3),
+  #people .person:nth-child(4) { align-self: start; }
+  #people .person:nth-child(5) { grid-column: 1 / -1; }
   .person .photo { aspect-ratio: 1; width: 120px; margin-bottom: 12px; border-radius: 50%; overflow: hidden; background: var(--green); display: grid; place-items: center; }
   .person .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .person h3 { font-size: 1.15rem; margin-bottom: .1em; }
@@ -105,13 +109,13 @@
         </div>
         <div>
           <h3> Human-AI Interaction and Its Effects on Semantic Categorization </h3>
-          <p>Engagement with Artificial Intelligence (AI) has increased dramatically in recent years. AI conversational agents or chatbots, in their attempt to mimic human speech, are trained to have [...]</p>
+          <p>Engagement with Artificial Intelligence (AI) has increased dramatically in recent years. AI conversational agents or chatbots, in their attempt to mimic human speech, are trained to have [...]
 
-          <p>In the research reported here, participants engaged in three days of structured voice-based interaction with ChatGPT-5 designed to convey positive emotional valence while learning two sci[...].</p>
+          <p>In the research reported here, participants engaged in three days of structured voice-based interaction with ChatGPT-5 designed to convey positive emotional valence while learning two sci[...]
 
-          <p>The priming manipulation was intended to test whether the AI's positive valence had been internalized: if so, participants should perform better when the emotional tone of the test enviro[...].</p>
+          <p>The priming manipulation was intended to test whether the AI's positive valence had been internalized: if so, participants should perform better when the emotional tone of the test enviro[...]
 
-          <p>These findings provide preliminary evidence that emotional valence conveyed by AI during learning may shape subsequent cognitive processing, with retrieval showing sensitivity to the matc[...].</p>
+          <p>These findings provide preliminary evidence that emotional valence conveyed by AI during learning may shape subsequent cognitive processing, with retrieval showing sensitivity to the matc[...]
         </div>
       </div>
     </div>
