@@ -34,9 +34,13 @@
   .nav li a { color: var(--mint); text-decoration: none; font-weight: 600; }
   .nav li a:hover { color: var(--orange); }
 
-  .hero { background: var(--green); color: #fff; padding: 110px 0 120px; }
+  .hero { background: var(--green); color: #fff; padding: 80px 0; }
+  .hero .wrap { display: flex; align-items: center; gap: 48px; }
+  .hero-content { flex: 1; }
   .hero h1 { font-size: clamp(2.6rem, 6vw, 4.5rem); font-weight: 800; max-width: none; }
   .hero p { font-size: 1.25rem; max-width: 52em; color: var(--mint); }
+  .hero-gallery { flex: 1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .hero-gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; display: block; }
   .btn { display: inline-block; margin-top: 12px; padding: 14px 26px; background: var(--orange); color: var(--green-deep); font: 700 1rem var(--head); text-decoration: none; border-radius: 999px; }
   .btn:hover { background: #ffa045; }
 
@@ -64,6 +68,12 @@
   .join a { color: var(--orange); }
 
   footer { padding: 28px 0; font-size: .9rem; }
+
+  @media (max-width: 768px) {
+    .hero .wrap { flex-direction: column; gap: 32px; }
+    .hero-gallery { width: 100%; }
+  }
+
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
 </head>
@@ -87,9 +97,17 @@
 <main id="top">
   <div class="hero">
     <div class="wrap">
-      <h1>The Layered Mind: How Levels of Consciousness Build Meaning</h1>
-      <p>We are cognitive science researchers studying how conscious, subconscious, and unconscious mental processes interact to comprehend complex stimuli and extract semantic meaning.</p>
-      <a class="btn" href="#research">See our research</a>
+      <div class="hero-content">
+        <h1>The Layered Mind: How Levels of Consciousness Build Meaning</h1>
+        <p>We are cognitive science researchers studying how conscious, subconscious, and unconscious mental processes interact to comprehend complex stimuli and extract semantic meaning.</p>
+        <a class="btn" href="#research">See our research</a>
+      </div>
+      <div class="hero-gallery" aria-label="Research photo gallery">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80" alt="Researchers collaborating in a lab">
+        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=900&q=80" alt="Students in discussion">
+        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80" alt="Cognitive science meeting">
+        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80" alt="Research presentation">
+      </div>
     </div>
   </div>
 
@@ -100,27 +118,27 @@
         <div>
           <h3> Acquisition of Novel Spatial Mappings into Unconscious Language Systems </h3>
           <p class="study-tag"><em>Conducting in the FA26 semester</em></p>
-          <p>We are currently conducting a study that investigates whether human learners possess the capability to acquire novel spatial mappings unconsciously. By examining the acquisition of novel spatial relationships without conscious perception, this research tests whether the mechanisms underlying implicit acquisition can establish novel mapping structures that lack prior linguistic entrenchment. We will keep you updated on our work. </p>
+          <p>We are currently conducting a study that investigates whether human learners possess the capability to acquire novel spatial mappings unconsciously. By examining the acquisition of novel [...]</p>
         </div>
         <div>
           <h3>Sleep Study</h3>
           <p class="study-tag"><em>Conducted in the SP26 semester</em></p>
-          <p>In the research reported here, participants learned 16 pairs of surreal, AI-generated video scenes (created with Veo) while completing an arithmetic task. They were randomly assigned to one of two schedules. The non-sleep group completed all three 20-minute sessions within a single day. The sleep group completed the third session the following morning, after a full night's sleep. In the final session, participants completed a recognition task in which they chose the matching image for each original pair from a grid that included AI-generated foils. They also completed a masked arithmetic priming task.</p>
+          <p>In the research reported here, participants learned 16 pairs of surreal, AI-generated video scenes (created with Veo) while completing an arithmetic task. They were randomly assigned to o[...]
           
-          <p> The study tested two predictions. The first was that sleep would strengthen the associations between paired scenes, producing better recognition in the sleep group. The second was that participants would show unconscious processing of the masked sums, responding faster and more accurately when the sum's parity matched the target's. Neither prediction was supported. The one-day group chose the correct pairs more often (.73) than the two-day group (.54), though this difference was only marginally significant (<em>p = .090</em>), and latency did not differ meaningfully between groups (<em>p = .484</em>). Congruent and incongruent priming trials were nearly identical in both latency and accuracy. </p>
+          <p> The study tested two predictions. The first was that sleep would strengthen the associations between paired scenes, producing better recognition in the sleep group. The second was that p[...]
           
-          <p> These findings are more consistent with a simple weakening of associations over time than with sleep-enhanced consolidation. The better performance of the one-day group likely reflects the more recent exposure to the pairs, which may have overwhelmed any strengthening effect of sleep. The priming data provided no evidence of unconscious processing of the masked addition problems. </p>
+          <p> These findings are more consistent with a simple weakening of associations over time than with sleep-enhanced consolidation. The better performance of the one-day group likely reflects t[...]
         </div>
         <div>
           <h3> Human-AI Interaction and Its Effects on Semantic Categorization </h3>
           <p class="study-tag"><em>Conducted in the FA25 semester</em></p>
-          <p>Engagement with Artificial Intelligence (AI) has increased dramatically in recent years. AI conversational agents or chatbots, in their attempt to mimic human speech, are trained to have strong positive emotional valence. Research shows that human users mimic or align with AI speech patterns. We investigated whether repeated exposure to this positive emotional valence during learning with an AI would influence later semantic categorization performance, specifically whether items learned in a positive-valence context would be retrieved more effectively in a similarly positive test environment.</p>
+          <p>Engagement with Artificial Intelligence (AI) has increased dramatically in recent years. AI conversational agents or chatbots, in their attempt to mimic human speech, are trained to have [...]</p>
 
-          <p>In the research reported here, participants engaged in three days of structured voice-based interaction with ChatGPT-5 designed to convey positive emotional valence while learning two scientific categories (rhubarb and plankton).  Participants then completed an in-person masked priming categorization task. The primes formed blocks of trials that created either a positive test environment or a negative test environment, with all primes within a block sharing the same valence. Following each prime, participants categorized a target word as either a rhubarb-related term or a plankton-related term. </p>
+          <p>In the research reported here, participants engaged in three days of structured voice-based interaction with ChatGPT-5 designed to convey positive emotional valence while learning two sci[...]
 
-          <p>The priming manipulation was intended to test whether the AI’s positive valence had been internalized: if so, participants should perform better when the emotional tone of the test environment matched the positive tone of the AI learning environment. The predicted effect emerged as marginally significant (two-tailed <em>p = .068</em>).</p>
+          <p>The priming manipulation was intended to test whether the AI’s positive valence had been internalized: if so, participants should perform better when the emotional tone of the test envi[...]
 
-          <p>These findings provide preliminary evidence that emotional valence conveyed by AI during learning may shape subsequent cognitive processing, with retrieval showing sensitivity to the match between the AI’s positive tone and the emotional tone of the testing context. See our poster below! ↓ ↓ </p>
+          <p>These findings provide preliminary evidence that emotional valence conveyed by AI during learning may shape subsequent cognitive processing, with retrieval showing sensitivity to the matc[...]
         </div>
       </div>
     </div>
@@ -130,7 +148,7 @@
     <div class="wrap">
       <h2>Conference Presentations</h2>
       <ul class="pubs">
-        <li>Gupta, E., Dunagan, K., &amp; Abrams, R.L. <a href="WPA2026GuptaDunaganAbrams.pdf">Human-AI Interaction and the Internalization of Positive Valence in Semantic Categorization</a>.<br>Poster presented at the May 2026 annual convention of the Western Psychological Association, Tacoma, WA.
+        <li>Gupta, E., Dunagan, K., &amp; Abrams, R.L. <a href="WPA2026GuptaDunaganAbrams.pdf">Human-AI Interaction and the Internalization of Positive Valence in Semantic Categorization</a>.<br>Poste[...]
       </ul>
     </div>
   </section>
@@ -141,7 +159,7 @@
       <div class="grid">
         <div class="person-row">
           <div class="person"><div class="photo" aria-hidden="true">RA</div><h3> Richard Abrams </h3><p>[Role]</p></div>
-          <div class="person"><div class="photo" aria-hidden="true"><img src="EG.PNG" alt="Emily Gupta"></div><h3> Emily Gupta </h3><p>Emily is a junior at Loyola Marymount University double-majoring in Psychology and Studio Arts. She joined the C&C group in January 2025, and she has particularly enjoyed designing experimental stimuli, running study sessions, and translating findings into research writing. Looking ahead, she plans to pursue a Ph.D. to continue exploring these questions through advanced research. Outside the lab, Emily stays active through interning at PCH Treatment Center, philanthropy with her sorority, and creating art for family and friends.</p></div>
+          <div class="person"><div class="photo" aria-hidden="true"><img src="EG.PNG" alt="Emily Gupta"></div><h3> Emily Gupta </h3><p>Emily is a junior at Loyola Marymount University double-majoring [...]</p>
         </div>
         <div class="person-row">
           <div class="person"><div class="photo" aria-hidden="true">KD</div><h3> Katelin Dunagan </h3><p>[Role]</p></div>
