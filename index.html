@@ -36,13 +36,38 @@
 
   .hero { background: var(--green); color: #fff; padding: 80px 0; }
   .hero .wrap { display: flex; align-items: center; gap: 48px; }
-  .hero-content { flex: 1; }
+  .hero-content { flex: 1; min-width: 0; }
   .hero h1 { font-size: clamp(2.6rem, 6vw, 4.5rem); font-weight: 800; max-width: none; }
   .hero p { font-size: 1.25rem; max-width: 52em; color: var(--mint); }
-  .hero-gallery { flex: 1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-  .hero-gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; display: block; }
   .btn { display: inline-block; margin-top: 12px; padding: 14px 26px; background: var(--orange); color: var(--green-deep); font: 700 1rem var(--head); text-decoration: none; border-radius: 999px; }
   .btn:hover { background: #ffa045; }
+
+  .hero-gallery {
+    flex: 1;
+    min-width: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 150px;
+    gap: 14px;
+  }
+  .hero-gallery figure {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 12px 25px rgba(13, 40, 31, 0.18);
+    background: rgba(255,255,255,0.08);
+  }
+  .hero-gallery figure:nth-child(1) { grid-row: span 2; }
+  .hero-gallery figure:nth-child(2) { grid-row: span 1; }
+  .hero-gallery figure:nth-child(3) { grid-row: span 2; }
+  .hero-gallery figure:nth-child(4) { grid-row: span 1; }
+  .hero-gallery img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.02);
+  }
 
   section { padding: 80px 0; scroll-margin-top: 56px; }
   section h2 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; color: var(--green); }
@@ -103,10 +128,10 @@
         <a class="btn" href="#research">See our research</a>
       </div>
       <div class="hero-gallery" aria-label="Research photo gallery">
-        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80" alt="Researchers collaborating in a lab">
-        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=900&q=80" alt="Students in discussion">
-        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80" alt="Cognitive science meeting">
-        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80" alt="Research presentation">
+        <figure><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80" alt="Researchers collaborating in a lab"></figure>
+        <figure><img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=900&q=80" alt="Students in discussion"></figure>
+        <figure><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80" alt="Cognitive science meeting"></figure>
+        <figure><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80" alt="Research presentation"></figure>
       </div>
     </div>
   </div>
