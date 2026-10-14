@@ -116,6 +116,10 @@
   /* first study sits right under the Research heading */
   .study-row:first-child .study-text { align-self: start; padding-top: 0; }
   .study-row:first-child .media { align-self: start; margin-top: 0; }
+  /* desktop: stretch the first image to the same top and bottom as its text */
+  @media (min-width: 769px) {
+    .study-row:first-child .media { align-self: stretch; aspect-ratio: auto; margin: 0 48px calc(56px + 1em); }
+  }
   .study-row { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; }
   .study-row:nth-child(even) { background: var(--mint); }
   .study-text { padding: 56px 40px; align-self: center; }
