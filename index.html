@@ -166,6 +166,18 @@
   }
 
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  /* WPA logo in the empty space to the right of Conference Presentations */
+  #presentations .wrap { position: relative; }
+  #presentations .section-logo { position: absolute; top: 0; right: 48px; width: 90px; height: auto; }
+  /* wide screens: bigger logo, centered vertically in the section (never wider than the free space beside the list) */
+  @media (min-width: 1030px) {
+    #presentations .section-logo { top: 50%; transform: translateY(-50%); width: clamp(90px, calc(100vw - 940px), 240px); }
+  }
+  @media (max-width: 768px) {
+    #presentations .section-logo { right: 24px; width: 64px; }
+    #presentations h2 { padding-right: 80px; }
+  }
 </style>
 </head>
 <body>
@@ -275,6 +287,7 @@
   <section id="presentations">
     <div class="wrap">
       <h2>Conference Presentations</h2>
+      <img class="section-logo" src="WPALogo.png" alt="Western Psychological Association logo">
       <ul class="pubs">
         <li> Gupta, E., Dunagan, K., &amp; Abrams, R.L. (2026, April 30-May 3) <a href="WPA2026GuptaDunaganAbrams.pdf">Human-AI Interaction and the Internalization of Positive Valence in Semantic Categorization</a>.<br>Poster presented at the 2026 annual convention of the Western Psychological Association, Tacoma, WA.</li>
         <li> Chen, M., Cheng, S., Nordfors, E., Mora, A., & Abrams, R. L. (2025, May 1-4). <a href="WPA2025Chenetal.pdf">Essential Role of Consciousness in Cross-Language Masked Priming</a>. <br> Poster presented at the 2025 annual convention of the Western Psychological Association, Las Vegas, NV.</li>
