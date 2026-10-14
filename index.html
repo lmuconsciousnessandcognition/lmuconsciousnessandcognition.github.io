@@ -116,10 +116,6 @@
   /* first study sits right under the Research heading */
   .study-row:first-child .study-text { align-self: start; padding-top: 0; }
   .study-row:first-child .media { align-self: start; margin-top: 0; }
-  /* desktop: stretch the first image to the same top and bottom as its text */
-  @media (min-width: 769px) {
-    .study-row:first-child .media { align-self: stretch; aspect-ratio: auto; margin: 0 48px calc(56px + 1em); }
-  }
   .study-row { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; }
   .study-row:nth-child(even) { background: var(--mint); }
   .study-text { padding: 56px 40px; align-self: center; }
@@ -133,7 +129,7 @@
   .media-placeholder { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; padding: 24px; color: var(--mint); font: 600 1.1rem var(--head); background: repeating-linear-gradient(45deg, rgba(255,255,255,.04) 0 14px, transparent 14px 28px), var(--green); }
   /* Transparent-background image (e.g. a PNG cutout): no box, shadow, or cropping */
   .media.clear { background: none; box-shadow: none; border-radius: 0; overflow: visible; }
-  .media.clear img { object-fit: contain; }
+  .media.clear img { object-fit: contain; object-position: center top; }
   .media.clear .media-placeholder { background: none; border: 2px dashed var(--green); border-radius: 12px; color: var(--green); }
   @media (max-width: 768px) {
     .hero .wrap, .research .wrap, #presentations .wrap, #people .wrap, #news .wrap, #contact .wrap, footer .wrap { padding: 0 24px; }
