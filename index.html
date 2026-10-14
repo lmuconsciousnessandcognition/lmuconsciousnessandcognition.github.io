@@ -41,6 +41,7 @@
   .hero p { font-size: 1.25rem; max-width: 52em; color: var(--mint); }
   .btn { display: inline-block; margin-top: 12px; padding: 14px 26px; background: var(--orange); color: var(--green-deep); font: 700 1rem var(--head); text-decoration: none; border-radius: 999px; }
   .btn:hover { background: #ffa045; }
+  .hero-buttons { display: flex; flex-wrap: wrap; gap: 0 16px; }
 
   /* Hero: group members (replaces the old photo gallery) */
   .hero-team {
@@ -190,7 +191,10 @@
       <div class="hero-content">
         <h1>The Layered Mind: How Levels of Consciousness Build Meaning</h1>
         <p>We are cognitive science researchers studying how conscious, subconscious, and unconscious mental processes interact to comprehend complex stimuli and extract semantic meaning.</p>
-        <a class="btn" href="#research">See our research</a>
+        <div class="hero-buttons">
+          <a class="btn" href="#research">See our research</a>
+          <a class="btn" href="#presentations">Subscribe for updates</a>
+        </div>
       </div>
     </div>
     <div class="hero-team" aria-label="Our group members">
