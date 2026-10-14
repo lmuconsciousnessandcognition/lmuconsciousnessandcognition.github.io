@@ -110,7 +110,12 @@
 
   /* Research: split-screen rows (text on one half, image/video on the other) */
   .research { padding-bottom: 0; }
-  .studies { margin-top: 40px; }
+  .hero .wrap, .research .wrap, #presentations .wrap, #people .wrap, #news .wrap, #contact .wrap, footer .wrap { max-width: none; padding: 0 48px; }
+  .research h2 { margin-bottom: 8px; }
+  .studies { margin-top: 0; }
+  /* first study sits right under the Research heading */
+  .study-row:first-child .study-text { align-self: start; padding-top: 0; }
+  .study-row:first-child .media { align-self: start; margin-top: 0; }
   .study-row { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; }
   .study-row:nth-child(even) { background: var(--mint); }
   .study-text { padding: 56px 40px; align-self: center; }
@@ -127,6 +132,7 @@
   .media.clear img { object-fit: contain; }
   .media.clear .media-placeholder { background: none; border: 2px dashed var(--green); border-radius: 12px; color: var(--green); }
   @media (max-width: 768px) {
+    .hero .wrap, .research .wrap, #presentations .wrap, #people .wrap, #news .wrap, #contact .wrap, footer .wrap { padding: 0 24px; }
     .study-row { grid-template-columns: 1fr; }
     .study-row > .study-text:first-child, .study-row > .study-text:last-child { padding: 40px 24px 24px; }
     .study-row > .study-text { order: 1; }
