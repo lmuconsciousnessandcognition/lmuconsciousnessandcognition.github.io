@@ -122,6 +122,10 @@
   .media { margin: 48px; align-self: center; aspect-ratio: 4 / 3; position: relative; overflow: hidden; border-radius: 12px; box-shadow: 0 12px 25px rgba(13, 40, 31, 0.18); background: var(--green-deep); }
   .media img, .media video, .media iframe { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border: 0; display: block; }
   .media-placeholder { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; padding: 24px; color: var(--mint); font: 600 1.1rem var(--head); background: repeating-linear-gradient(45deg, rgba(255,255,255,.04) 0 14px, transparent 14px 28px), var(--green); }
+  /* Transparent-background image (e.g. a PNG cutout): no box, shadow, or cropping */
+  .media.clear { background: none; box-shadow: none; border-radius: 0; overflow: visible; }
+  .media.clear img { object-fit: contain; }
+  .media.clear .media-placeholder { background: none; border: 2px dashed var(--green); border-radius: 12px; color: var(--green); }
   @media (max-width: 768px) {
     .study-row { grid-template-columns: 1fr; }
     .study-row > .study-text:first-child, .study-row > .study-text:last-child { padding: 40px 24px 24px; }
@@ -199,7 +203,7 @@
           <p class="study-tag"><em>Conducting in the FA26 semester</em></p>
           <p>We are currently conducting a study that investigates whether human learners possess the capability to acquire novel spatial mappings unconsciously. By examining the acquisition of novel spatial relationships without conscious perception, this research tests whether the mechanisms underlying implicit acquisition can establish novel mapping structures that lack prior linguistic entrenchment.</p>
         </div>
-        <figure class="media">
+        <figure class="media clear">
           <!-- IMAGE: replace the placeholder below with <img src="study1.jpg" alt="Describe the image"> -->
           <img src="Brain.png" alt="Brain">
         </figure>
