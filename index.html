@@ -170,9 +170,14 @@
   /* WPA logo in the empty space to the right of Conference Presentations */
   #presentations .wrap { position: relative; }
   #presentations .section-logo { position: absolute; top: 0; right: 48px; width: 90px; height: auto; }
-  /* wide screens: bigger logo, centered vertically in the section (never wider than the free space beside the list) */
+  /* wide screens: large logo, centered vertically, and centered horizontally between the right end of the list (48px padding + 46em) and the right edge of the page */
   @media (min-width: 1030px) {
-    #presentations .section-logo { top: 50%; transform: translateY(-50%); width: clamp(90px, calc(100vw - 940px), 240px); }
+    #presentations .section-logo {
+      top: 50%; right: auto;
+      left: calc((48px + 46em + 100%) / 2);
+      transform: translate(-50%, -50%);
+      width: clamp(90px, calc(100vw - 48px - 46em - 80px), 360px);
+    }
   }
   @media (max-width: 768px) {
     #presentations .section-logo { right: 24px; width: 64px; }
