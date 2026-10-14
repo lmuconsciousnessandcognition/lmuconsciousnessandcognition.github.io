@@ -42,7 +42,8 @@
   .btn { display: inline-block; margin-top: 12px; padding: 14px 26px; background: var(--orange); color: var(--green-deep); font: 700 1rem var(--head); text-decoration: none; border-radius: 999px; }
   .btn:hover { background: #ffa045; }
 
-  .hero-gallery {
+  /* Hero: group members (replaces the old photo gallery) */
+  .hero-team {
     position: absolute;
     right: 120px;
     top: 50%;
@@ -50,28 +51,26 @@
     width: 45%;
     max-width: 550px;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: 150px;
-    gap: 22px;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 28px 20px;
   }
-  .hero-gallery figure {
-    margin: 0;
+  .hero-team figure { grid-column: span 2; margin: 0; text-align: center; }
+  .hero-team figure:nth-child(4) { grid-column: 2 / span 2; }
+  .hero-team figure:nth-child(5) { grid-column: 4 / span 2; }
+  .hero-team .photo {
+    aspect-ratio: 1;
+    border-radius: 50%;
     overflow: hidden;
-    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: rgba(255,255,255,0.12);
+    border: 3px solid rgba(220,239,227,0.55);
     box-shadow: 0 12px 25px rgba(13, 40, 31, 0.18);
-    background: rgba(255,255,255,0.08);
+    font: 800 2rem var(--head);
+    color: var(--mint);
   }
-  .hero-gallery figure:nth-child(1) { grid-row: span 2; }
-  .hero-gallery figure:nth-child(2) { grid-row: span 1; }
-  .hero-gallery figure:nth-child(3) { grid-row: span 2; }
-  .hero-gallery figure:nth-child(4) { grid-row: span 1; }
-  .hero-gallery img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: scale(1.02);
-  }
+  .hero-team img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .hero-team figcaption { margin-top: 10px; font: 700 1rem/1.2 var(--head); color: #fff; }
 
   section { padding: 80px 0; scroll-margin-top: 56px; }
   section h2 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; color: var(--green); }
@@ -101,7 +100,7 @@
   @media (max-width: 768px) {
     .hero { overflow: visible; }
     .hero .wrap { flex-direction: column; gap: 32px; }
-    .hero-gallery { position: static; width: 100%; max-width: none; transform: none; }
+    .hero-team { position: static; width: 100%; max-width: none; transform: none; padding: 0 24px; margin-top: 32px; }
     .hero-content { flex: 1; }
     .hero h1 { max-width: none; }
   }
@@ -194,11 +193,12 @@
         <a class="btn" href="#research">See our research</a>
       </div>
     </div>
-    <div class="hero-gallery" aria-label="Research photo gallery">
-      <figure><img src="Gallery1.JPEG" alt="2026 with poster"></figure>
-      <figure><img src="Gallery2.jpeg" alt="2018 with poster"></figure>
-      <figure><img src="Gallery3.jpeg" alt="Emily with button"></figure>
-      <figure><img src="Gallery4.jpeg" alt="2025 with poster"></figure>
+    <div class="hero-team" aria-label="Our group members">
+      <figure><div class="photo"><img src="RA.PNG" alt="Richard Abrams"></div><figcaption>Richard Abrams</figcaption></figure>
+      <figure><div class="photo"><img src="EG.PNG" alt="Emily Gupta"></div><figcaption>Emily Gupta</figcaption></figure>
+      <figure><div class="photo" role="img" aria-label="Katelin Dunagan">KD</div><figcaption>Katelin Dunagan</figcaption></figure>
+      <figure><div class="photo"><img src="MC.PNG" alt="Mira Chaffin"></div><figcaption>Mira Chaffin</figcaption></figure>
+      <figure><div class="photo"><img src="CB.jpeg" alt="Callie Bream"></div><figcaption>Callie Bream</figcaption></figure>
     </div>
   </div>
 
