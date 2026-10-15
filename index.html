@@ -143,6 +143,15 @@
     .study-row > .media { order: 2; margin: 0 24px 40px; }
   }
 
+  /* Two stacked videos with captions, centered beside the text */
+  .media-stack { align-self: center; margin: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
+  .media-stack .media-item { width: 100%; }
+  .media-stack .media { margin: 0; }
+  .media-caption { margin: 12px 0 0; text-align: center; font: 600 1rem/1.3 var(--head); color: var(--green-deep); }
+  @media (max-width: 768px) {
+    .study-row > .media-stack { order: 2; margin: 0 24px 40px; }
+  }
+
   /* Kit subscribe form: match site fonts and colors */
   .formkit-form[data-uid="e9677052f9"] .formkit-input,
   .formkit-form[data-uid="e9677052f9"] .formkit-input::placeholder {
@@ -240,12 +249,24 @@
         </figure>
       </div>
       <div class="study-row">
-        <figure class="media">
-          <!-- VIDEO: replace the placeholder below with your video, e.g.
-               <video controls poster="study2-poster.jpg"><source src="study2.mp4" type="video/mp4"></video>
-               or a YouTube/Vimeo <iframe src="..." allowfullscreen></iframe> -->
-          <div class="media-placeholder"><span>&#9654; Video: Study 2 video</span></div>
-        </figure>
+        <div class="media-stack">
+          <div class="media-item">
+            <figure class="media">
+              <!-- VIDEO: replace the placeholder below with your video, e.g.
+                   <video controls poster="study2-poster.jpg"><source src="study2.mp4" type="video/mp4"></video>
+                   or a YouTube/Vimeo <iframe src="..." allowfullscreen></iframe> -->
+              <div class="media-placeholder"><span>&#9654; Video: Study 2 video</span></div>
+            </figure>
+            <p class="media-caption">Session 1 arithmetic trials &amp; video trial</p>
+          </div>
+          <div class="media-item">
+            <figure class="media">
+              <!-- VIDEO 2: replace the placeholder below with your second video (same format as the first) -->
+              <div class="media-placeholder"><span>&#9654; Video: Study 2 video 2</span></div>
+            </figure>
+            <p class="media-caption">Session 2 arithmetic trials &amp; recognition task</p>
+          </div>
+        </div>
         <div class="study-text">
           <h3>Memory Consolidation with Sleep in Associative Learning</h3>
           <p class="study-tag"><em>Conducted in the SP26 semester</em></p>
