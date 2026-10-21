@@ -148,6 +148,14 @@
   .media-stack .media-item { width: 100%; }
   .media-stack .media { margin: 0; aspect-ratio: 960 / 624; border: 3px solid var(--green-deep); }
   .media-stack .media video { object-fit: cover; }
+  /* Heading-only text block (pre-COVID section): larger, centered beside the stacked images */
+  .study-row .study-text-heading h3 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; margin: 0; }
+  /* Poster image with a caption underneath (same box as a plain .media) */
+  .media-captioned { align-self: center; margin: 48px; }
+  .media-captioned .media { margin: 0; }
+  @media (max-width: 768px) {
+    .study-row > .media-captioned { order: 2; margin: 0 24px 40px; }
+  }
   .media-caption { margin: 12px 0 0; text-align: center; font: 600 1rem/1.3 var(--head); color: var(--green-deep); }
   @media (max-width: 768px) {
     .study-row > .media-stack { order: 2; margin: 0 24px 40px; }
@@ -250,6 +258,42 @@
         </figure>
       </div>
       <div class="study-row">
+        <div class="media-captioned">
+          <figure class="media">
+            <img src="2026WPA.JPEG" alt="2026Poster">
+          </figure>
+          <p class="media-caption">Gupta, E., Dunagan, K., &amp; Abrams, R.L. (2026, April 30-May 3) Human-AI Interaction and the Internalization of Positive Valence in Semantic Categorization. Poster presented at the 2026 annual convention of the Western Psychological Association, Tacoma, WA.</p>
+        </div>
+        <div class="study-text">
+          <h3> Human-AI Interaction and Its Effects on Semantic Categorization </h3>
+          <p class="study-tag"><em>Conducted in the FA25 semester</em></p>
+          <p>Engagement with Artificial Intelligence (AI) has increased dramatically in recent years. AI conversational agents or chatbots, in their attempt to mimic human speech, are trained to have strong positive emotional valence. Research shows that human users mimic or align with AI speech patterns. We investigated whether repeated exposure to this positive emotional valence during learning with an AI would influence later semantic categorization performance, specifically whether items learned in a positive-valence context would be retrieved more effectively in a similarly positive test environment. </p>
+
+          <p>In the research reported here, participants engaged in three days of structured voice-based interaction with ChatGPT-5 designed to convey positive emotional valence while learning two scientific categories (rhubarb and plankton).  Participants then completed an in-person masked priming categorization task. The primes formed blocks of trials that created either a positive test environment or a negative test environment, with all primes within a block sharing the same valence. Following each prime, participants categorized a target word as either a rhubarb-related term or a plankton-related term. </p>
+
+          <p>The priming manipulation was intended to test whether the AI’s positive valence had been internalized: if so, participants should perform better when the emotional tone of the test environment matched the positive tone of the AI learning environment. The predicted effect emerged as marginally significant (two-tailed <em>p</em> = .068). These findings provide preliminary evidence that emotional valence conveyed by AI during learning may shape subsequent cognitive processing, with retrieval showing sensitivity to the match between the AI’s positive tone and the emotional tone of the testing context.</p>
+         
+        </div>
+      </div>
+      <div class="study-row">
+        <div class="study-text">
+          <h3> Essential Role of Consciousness in Cross-Language Masked Priming</h3>
+          <p class="study-tag"><em>Conducted in the FA24 semester</em></p>
+          <p> Masked priming is a useful means of assessing the ways in which conscious and unconscious language-processing systems in the brain coordinate and interact. In masked priming procedures, a briefly-flashed masked word prime precedes a closely following target word which participants categorize. Under display conditions that render primes consciously imperceptible, priming effects (facilitation of responses to targets) are interpreted as demonstrating processing that heavily involves unconscious language systems. Such effects, however, seem to depend on recent conscious exposure to the words subsequently presented as the primes, implicating substantial conscious pre-setting of unconscious systems to enable analysis of relatively scant information in light of probabilistic expectations. Findings of masked cross-language priming in bilinguals--where a prime from one language facilitates responding to a target with the same meaning in a second from one language facilitates responding to a target with the same meaning in a second language--have been reported and are especially intriguing in the absence of prior conscious exposure to the words displayed as primes. For example, Nakayama & Lupker in 2018 reported Japanese-English cross-language priming in display conditions that the authors characterized as preventing conscious perceptibility, although perceptibility was not explicitly tested. </p>
+
+          <p> In the research reported here we addressed the question of perceptibility directly, and by extension the role of consciousness. In three experiments along the lines of Nakayama and Lupker, we tested masked cross-language priming among Chinese-English bilinguals and Spanish-English bilinguals. (A third experiment identified optimal display parameters.) In the two cross-language priming experiments, priming effects were observed only when primes were consciously perceptible. Experiment 1 (Chinese-English) yielded significant cross-language priming with 33 ms primes (<em>p</em> = .025) and 50 ms primes (<em>p</em> = .022); in each case the primes were significantly above chance in an explicit test of visibility (<em>p</em> < .05 at both durations). Experiment 2 (Spanish-English), using display parameters designed to be just above and below the threshold for visibility, obtained significant priming from 67 ms primes (<em>p</em> = .011) but not from 33 ms primes (<em>p</em> = .402) where visibility was above chance for the former (<em>p</em> = .002) but not for the latter (<em>p</em> = .590). </p>
+
+          <p> Taken together, these findings suggest that direct conscious perceptibility of masked words is a necessary condition for their processing in cross-language priming paradigms. </p>
+          
+        </div>
+        <div class="media-captioned">
+          <figure class="media">
+            <img src="2025WPA.jpeg" alt="2025Poster">
+          </figure>
+          <p class="media-caption">Chen, M., Cheng, S., Nordfors, E., Mora, A., &amp; Abrams, R. L. (2025, May 1-4). Essential Role of Consciousness in Cross-Language Masked Priming. Poster presented at the 2025 annual convention of the Western Psychological Association, Las Vegas, NV.</p>
+        </div>
+      </div>
+      <div class="study-row">
         <div class="media-stack">
           <div class="media-item">
             <figure class="media">
@@ -281,39 +325,26 @@
         </div>
       </div>
       <div class="study-row">
-        <div class="study-text">
-          <h3> Human-AI Interaction and Its Effects on Semantic Categorization </h3>
-          <p class="study-tag"><em>Conducted in the FA25 semester</em></p>
-          <p>Engagement with Artificial Intelligence (AI) has increased dramatically in recent years. AI conversational agents or chatbots, in their attempt to mimic human speech, are trained to have strong positive emotional valence. Research shows that human users mimic or align with AI speech patterns. We investigated whether repeated exposure to this positive emotional valence during learning with an AI would influence later semantic categorization performance, specifically whether items learned in a positive-valence context would be retrieved more effectively in a similarly positive test environment. </p>
-
-          <p>In the research reported here, participants engaged in three days of structured voice-based interaction with ChatGPT-5 designed to convey positive emotional valence while learning two scientific categories (rhubarb and plankton).  Participants then completed an in-person masked priming categorization task. The primes formed blocks of trials that created either a positive test environment or a negative test environment, with all primes within a block sharing the same valence. Following each prime, participants categorized a target word as either a rhubarb-related term or a plankton-related term. </p>
-
-          <p>The priming manipulation was intended to test whether the AI’s positive valence had been internalized: if so, participants should perform better when the emotional tone of the test environment matched the positive tone of the AI learning environment. The predicted effect emerged as marginally significant (two-tailed <em>p</em> = .068). These findings provide preliminary evidence that emotional valence conveyed by AI during learning may shape subsequent cognitive processing, with retrieval showing sensitivity to the match between the AI’s positive tone and the emotional tone of the testing context.</p>
-         
+        <div class="study-text study-text-heading">
+          <h3>Want to see what our group looked like pre-COVID?</h3>
         </div>
-        <figure class="media">
-          <img src="2026WPA.JPEG" alt="2026Poster">
-        </figure>
-      </div>
-      <div class="study-row">
-        <figure class="media">
-          <img src="2025WPA.jpeg" alt="2025Poster">
-        </figure>
-        <div class="study-text">
-          <h3> Essential Role of Consciousness in Cross-Language Masked Priming</h3>
-          <p class="study-tag"><em>Conducted in the FA24 semester</em></p>
-          <p> Masked priming is a useful means of assessing the ways in which conscious and unconscious language-processing systems in the brain coordinate and interact. In masked priming procedures, a briefly-flashed masked word prime precedes a closely following target word which participants categorize. Under display conditions that render primes consciously imperceptible, priming effects (facilitation of responses to targets) are interpreted as demonstrating processing that heavily involves unconscious language systems. Such effects, however, seem to depend on recent conscious exposure to the words subsequently presented as the primes, implicating substantial conscious pre-setting of unconscious systems to enable analysis of relatively scant information in light of probabilistic expectations. Findings of masked cross-language priming in bilinguals--where a prime from one language facilitates responding to a target with the same meaning in a second from one language facilitates responding to a target with the same meaning in a second language--have been reported and are especially intriguing in the absence of prior conscious exposure to the words displayed as primes. For example, Nakayama & Lupker in 2018 reported Japanese-English cross-language priming in display conditions that the authors characterized as preventing conscious perceptibility, although perceptibility was not explicitly tested. </p>
-
-          <p> In the research reported here we addressed the question of perceptibility directly, and by extension the role of consciousness. In three experiments along the lines of Nakayama and Lupker, we tested masked cross-language priming among Chinese-English bilinguals and Spanish-English bilinguals. (A third experiment identified optimal display parameters.) In the two cross-language priming experiments, priming effects were observed only when primes were consciously perceptible. Experiment 1 (Chinese-English) yielded significant cross-language priming with 33 ms primes (<em>p</em> = .025) and 50 ms primes (<em>p</em> = .022); in each case the primes were significantly above chance in an explicit test of visibility (<em>p</em> < .05 at both durations). Experiment 2 (Spanish-English), using display parameters designed to be just above and below the threshold for visibility, obtained significant priming from 67 ms primes (<em>p</em> = .011) but not from 33 ms primes (<em>p</em> = .402) where visibility was above chance for the former (<em>p</em> = .002) but not for the latter (<em>p</em> = .590). </p>
-
-          <p> Taken together, these findings suggest that direct conscious perceptibility of masked words is a necessary condition for their processing in cross-language priming paradigms. </p>
-          
+        <div class="media-stack">
+          <div class="media-item">
+            <figure class="media">
+              <img src="Psychonomics2018Martinetal.jpeg" alt="Our research group before COVID">
+            </figure>
+          </div>
+          <div class="media-item">
+            <figure class="media">
+              <img src="WPA2019Ozmenetal.JPG" alt="Our research group before COVID, second photo">
+            </figure>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="presentations">
+  <section id="presentations" class="alt">
     <div class="wrap">
       <h2>Conference Presentations</h2>
       <img class="section-logo" src="WPALogo.png" alt="Western Psychological Association logo">
@@ -327,7 +358,7 @@
     </div>
   </section>
 
-  <section id="people" class="alt">
+  <section id="people">
     <div class="wrap">
       <h2>People</h2>
       <div class="grid">
@@ -346,7 +377,7 @@
     </div>
   </section>
 
-  <section id="news">
+  <section id="news" class="alt">
     <div class="wrap">
       <h2>Latest news</h2>
       <p>Subscribe to receive an email when we have updates to share!</p>
@@ -357,7 +388,7 @@
     </div>
   </section>
 
-  <section id="contact" class="contact alt">
+  <section id="contact" class="contact">
     <div class="wrap">
       <h2>Contact us</h2>
       <p class="lead"> Email us at <a href="mailto:consciousnessandcognition@gmail.com">consciousnessandcognition@gmail.com</a>.</p>
