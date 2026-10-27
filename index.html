@@ -161,6 +161,16 @@
     .study-row > .media-stack { order: 2; margin: 0 24px 40px; }
   }
 
+  /* Pre-COVID row: centered heading on top, the two photos with captions side by side below */
+  .study-row.study-row-precovid { grid-template-columns: 1fr; }
+  .study-row-precovid > .study-text-heading { padding: 48px 48px 0; text-align: center; }
+  .study-row-precovid > .media-stack { flex-direction: row; align-items: flex-start; margin: 32px 48px 48px; gap: 32px; }
+  .study-row-precovid > .media-stack .media-item { flex: 1 1 0; min-width: 0; }
+  @media (max-width: 768px) {
+    .study-row-precovid > .study-text-heading { padding: 40px 24px 0; }
+    .study-row-precovid > .media-stack { flex-direction: column; margin: 24px 24px 40px; }
+  }
+
   /* Kit subscribe form: match site fonts and colors */
   .formkit-form[data-uid="e9677052f9"] .formkit-input,
   .formkit-form[data-uid="e9677052f9"] .formkit-input::placeholder {
@@ -333,7 +343,7 @@
           <p>These findings are more consistent with a simple weakening of associations over time than with sleep-enhanced consolidation. The better performance of the one-day group likely reflects the more recent exposure to the pairs, which may have overwhelmed any strengthening effect of sleep. The priming data provided no evidence of unconscious processing of the masked addition problems.</p>
         </div>
       </div>
-      <div class="study-row">
+      <div class="study-row study-row-precovid">
         <div class="study-text study-text-heading">
           <h3>Want to see what our group looked like pre-COVID?</h3>
         </div>
