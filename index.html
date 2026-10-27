@@ -195,20 +195,15 @@
 
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
-  /* Three conference logos (WPA, Psychonomic Society, APS), same size, evenly spaced.
-     Narrow screens: a row between the heading and the list. */
-  #presentations .section-logos { display: flex; justify-content: space-evenly; align-items: center; margin-top: 16px; }
-  #presentations .section-logos img { width: 64px; height: auto; }
-  @media (min-width: 769px) { #presentations .section-logos img { width: 90px; } }
-  /* wide screens: a column in the empty space to the right of the list, spaced evenly down the section */
-  @media (min-width: 1030px) {
-    #presentations .wrap { position: relative; }
-    #presentations .section-logos {
-      position: absolute; top: 0; bottom: 0; margin: 0;
-      left: calc(48px + 46em); right: 0;
-      flex-direction: column;
-    }
-    #presentations .section-logos img { width: clamp(90px, calc(100vw - 48px - 46em - 80px), 180px); }
+  /* Three small conference logos (WPA, Psychonomic Society, APS) beside the heading; citations span the full width */
+  #presentations .section-title { display: flex; align-items: center; flex-wrap: wrap; column-gap: 28px; row-gap: 12px; }
+  #presentations .section-title h2 { margin: 0; }
+  #presentations .section-logos { display: flex; align-items: center; gap: 20px; }
+  #presentations .section-logos img { width: 56px; height: auto; flex: none; }
+  #presentations .pubs { max-width: none; }
+  @media (max-width: 768px) {
+    #presentations .section-logos { gap: 14px; }
+    #presentations .section-logos img { width: 44px; }
   }
 
   /* Scroll fade-in: sections ease in as they enter the viewport.
@@ -366,11 +361,13 @@
 
   <section id="presentations" class="alt">
     <div class="wrap">
-      <h2>Publications &amp; Presentations</h2>
-      <div class="section-logos">
-        <img src="WPALogo.png" alt="Western Psychological Association logo">
-        <img src="PsychonomicsLogo.PNG" alt="Psychonomic Society logo">
-        <img src="APSLogo.png" alt="Association for Psychological Science logo">
+      <div class="section-title">
+        <h2>Publications &amp; Presentations</h2>
+        <div class="section-logos">
+          <img src="WPALogo.png" alt="Western Psychological Association logo">
+          <img src="PsychonomicsLogo.png" alt="Psychonomic Society logo">
+          <img src="APSLogo.png" alt="Association for Psychological Science logo">
+        </div>
       </div>
       <ul class="pubs">
         <li style="margin-bottom: 32px;"> Morgan, R. M., &amp; Abrams, R. L. (2021). Recruitment of newly acquired category exemplars into unconscious processing systems is rapid and durable. <em>Consciousness and Cognition, 95</em>.</li>
