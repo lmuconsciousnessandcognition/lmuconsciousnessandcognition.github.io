@@ -195,21 +195,20 @@
 
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
-  /* WPA logo in the empty space to the right of Publications & Presentations */
-  #presentations .wrap { position: relative; }
-  #presentations .section-logo { position: absolute; top: 0; right: 48px; width: 90px; height: auto; }
-  /* wide screens: large logo, centered vertically, and centered horizontally between the right end of the list (48px padding + 46em) and the right edge of the page */
+  /* Three conference logos (WPA, Psychonomic Society, APS), same size, evenly spaced.
+     Narrow screens: a row between the heading and the list. */
+  #presentations .section-logos { display: flex; justify-content: space-evenly; align-items: center; margin-top: 16px; }
+  #presentations .section-logos img { width: 64px; height: auto; }
+  @media (min-width: 769px) { #presentations .section-logos img { width: 90px; } }
+  /* wide screens: a column in the empty space to the right of the list, spaced evenly down the section */
   @media (min-width: 1030px) {
-    #presentations .section-logo {
-      top: 50%; right: auto;
-      left: calc((48px + 46em + 100%) / 2);
-      transform: translate(-50%, -50%);
-      width: clamp(90px, calc(100vw - 48px - 46em - 80px), 300px);
+    #presentations .wrap { position: relative; }
+    #presentations .section-logos {
+      position: absolute; top: 0; bottom: 0; margin: 0;
+      left: calc(48px + 46em); right: 0;
+      flex-direction: column;
     }
-  }
-  @media (max-width: 768px) {
-    #presentations .section-logo { right: 24px; width: 64px; }
-    #presentations h2 { padding-right: 80px; }
+    #presentations .section-logos img { width: clamp(90px, calc(100vw - 48px - 46em - 80px), 180px); }
   }
 
   /* Scroll fade-in: sections ease in as they enter the viewport.
@@ -368,7 +367,11 @@
   <section id="presentations" class="alt">
     <div class="wrap">
       <h2>Publications &amp; Presentations</h2>
-      <img class="section-logo" src="WPALogo.png" alt="Western Psychological Association logo">
+      <div class="section-logos">
+        <img src="WPALogo.png" alt="Western Psychological Association logo">
+        <img src="PsychonomicsLogo.png" alt="Psychonomic Society logo">
+        <img src="APSLogo.png" alt="Association for Psychological Science logo">
+      </div>
       <ul class="pubs">
         <li style="margin-bottom: 32px;"> Morgan, R. M., &amp; Abrams, R. L. (2021). Recruitment of newly acquired category exemplars into unconscious processing systems is rapid and durable. <em>Consciousness and Cognition, 95</em>.</li>
         <li> Gupta, E., Dunagan, K., &amp; Abrams, R.L. (2026, April 30-May 3) <a href="WPA2026GuptaDunaganAbrams.pdf">Human-AI Interaction and the Internalization of Positive Valence in Semantic Categorization</a>.<br>Poster presented at the Western Psychological Association 106th Annual Convention, Tacoma, WA.</li>
