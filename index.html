@@ -201,7 +201,16 @@
     #presentations .section-logo { right: 24px; width: 64px; }
     #presentations h2 { padding-right: 80px; }
   }
+
+  /* Scroll fade-in: sections ease in as they enter the viewport.
+     Only active when JavaScript runs, so the page stays fully visible without it. */
+  .fade-ready main > section.fade-section { opacity: 0; transform: translateY(28px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .fade-ready main > section.fade-section.is-visible { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .fade-ready main > section.fade-section { opacity: 1; transform: none; transition: none; }
+  }
 </style>
+<script>document.documentElement.classList.add("fade-ready");</script>
 </head>
 <body>
 
@@ -351,10 +360,18 @@
       <h2>Conference Presentations</h2>
       <img class="section-logo" src="WPALogo.png" alt="Western Psychological Association logo">
       <ul class="pubs">
+        <li style="margin-bottom: 32px;"> Morgan, R. M., &amp; Abrams, R. L. (2021). Recruitment of newly acquired category exemplars into unconscious processing systems is rapid and durable. <em>Consciousness and Cognition, 95</em>.</li>
         <li> Gupta, E., Dunagan, K., &amp; Abrams, R.L. (2026, April 30-May 3) <a href="WPA2026GuptaDunaganAbrams.pdf">Human-AI Interaction and the Internalization of Positive Valence in Semantic Categorization</a>.<br>Poster presented at the 2026 annual convention of the Western Psychological Association, Tacoma, WA.</li>
         <li> Chen, M., Cheng, S., Nordfors, E., Mora, A., & Abrams, R. L. (2025, May 1-4). <a href="WPA2025Chenetal.pdf">Essential Role of Consciousness in Cross-Language Masked Priming</a>. <br> Poster presented at the 2025 annual convention of the Western Psychological Association, Las Vegas, NV.</li>
+        <li> Cheng, S., George, L., Arenson, H., &amp; Abrams, R.L. (2023, April). Prior Covid-19 infection is associated with performance impairment in a speeded response priming task.<br> Poster presented at the Western Psychological Association 103rd Annual Convention, Riverside, CA.</li>
+        <li> Trudeau, J., Hecht, E., Cheng, S., Cervantes, P., Akgul, A., &amp; Abrams, R.L. (2022, April). Newly-learned words function as subliminal primes after a single learning session.<br> Poster presented at the Western Psychological Association 102nd Annual Convention, Portland, OR.</li>
         <li> Trudeau, J., Hecht, E., Akgul, E., Cervantes, P., Cheng, S. Abrams, R. L. (2021, April 28-30). <a href="WPA2021Trudeauetal.pdf">The Role of Sleep in the Recruitment of Newly Learned Fish and Flower Words Into Unconscious Processing Systems</a> .<br> Poster presented virtually at the 2021 annual convention of the Western Psychological Association. </li>
+        <li> Trudeau, J., Vishnevsky, S., &amp; Abrams, R.L. (2021, April). Extended-release opioids increase risk of delirium by sustaining dopamine/acetylcholine imbalance.<br> Poster presented at the Western Psychological Association 101st Annual Convention, Las Vegas, NV.</li>
         <li> Morgan, R., Flanagan, D., Pruyser, A., Amendola, L., Abrams, R. L. (2020, October 28-31). <a href="WPA2020Morganetal.pdf">The Role of Consolidation and Relearning in Unconscious Priming From Newly-Acquired Category Examples</a> .<br> Poster presented virtually at the 2020 annual convention of the Western Psychological Association. </li>
+        <li> Pruyser, A., Flanagan, D., Aniceto, S., Morgan, R., &amp; Abrams, R. L. (2020). Rapid and durable recruitment of novel category exemplars into lexical unconscious processing.<br> Poster presented at the 32nd Annual Meeting of the Association for Psychological Science, Chicago, IL. (Conference cancelled)</li>
+        <li> Morgan, R., Ozmen, K. A., O’Connor, K., Flanagan, D., Pruyser, A., &amp; Abrams, R. L. (2019, November). Relearning as a necessary precondition for the unconscious processing of newly-learned category exemplars.<br> Poster presented at the Psychonomic Society 60th Annual Meeting, Montreal, QC.</li>
+        <li> Ozmen, K. A., Morgan, R., O’Connor, K., Pruyser, A., Flanagan, D., &amp; Abrams, R. L. (2019, April). Subword unconscious processing occurs early in the learning of novel category exemplars.<br> Poster presented at the Western Psychological Association 99th Annual Convention, Pasadena, CA.</li>
+        <li> Morgan, R., Ozmen, K. A., Martin, S., &amp; Abrams, R. L. (2018). Rapid recruitment of unconscious lexical processing in the acquisition of novel category exemplars.<br> Poster presented at the Psychonomic Society 59th Annual Meeting, New Orleans, LA.</li>
 </li>
       </ul>
     </div>
@@ -430,5 +447,21 @@
   })();
 </script>
 
+<script>
+  /* Fade each section in as it scrolls into view. */
+  (function () {
+    var sections = document.querySelectorAll('main > section');
+    if (!('IntersectionObserver' in window)) {
+      document.documentElement.classList.remove('fade-ready');
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    sections.forEach(function (sec) { sec.classList.add('fade-section'); io.observe(sec); });
+  })();
+</script>
 </body>
 </html>
